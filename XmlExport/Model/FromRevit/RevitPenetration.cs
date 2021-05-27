@@ -9,7 +9,7 @@ using Autodesk.Revit.DB;
 using Autodesk.Revit.UI;
 using XmlExport.Model.Abstraction;
 using XmlExport.Model.Dto;
-using XmlExport.Model.Interfaces;
+using XmlExport.Model.Infrastructure;
 using ArgumentException = Autodesk.Revit.Exceptions.ArgumentException;
 using ArgumentNullException = Autodesk.Revit.Exceptions.ArgumentNullException;
 

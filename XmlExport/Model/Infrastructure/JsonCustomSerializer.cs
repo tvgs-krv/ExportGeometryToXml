@@ -2,7 +2,7 @@
 using System.IO;
 using Newtonsoft.Json;
 
-namespace XmlExport.Model.Interfaces
+namespace XmlExport.Model.Infrastructure
 {
     public class JsonCustomSerializer
     {

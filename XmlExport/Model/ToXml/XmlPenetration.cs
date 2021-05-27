@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using XmlExport.Model.Dto;
-using XmlExport.Model.Interfaces;
+using XmlExport.Model.Infrastructure;
 
 namespace XmlExport.Model.ToXml
 {

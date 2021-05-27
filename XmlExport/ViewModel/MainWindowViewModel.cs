@@ -19,6 +19,7 @@ namespace XmlExport.ViewModel
     {
         ByBuilding,
         ByLevel
+        
     }
 
 

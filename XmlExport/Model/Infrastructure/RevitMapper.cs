@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace XmlExport.Model.Interfaces
+namespace XmlExport.Model.Infrastructure
 {
     public class RevitMapper
     {

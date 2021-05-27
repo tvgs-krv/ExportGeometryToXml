@@ -5,7 +5,7 @@ using System.Text.RegularExpressions;
 using Autodesk.Revit.DB;
 using XmlExport.Model.ToXml;
 
-namespace XmlExport.Model.Interfaces
+namespace XmlExport.Model.Infrastructure
 {
     public abstract class XmlElementStructure<T, TO>
     {

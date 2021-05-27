@@ -4,7 +4,7 @@ using System.Linq;
 using Autodesk.Revit.DB;
 using XmlExport.Model.Abstraction;
 using XmlExport.Model.Dto;
-using XmlExport.Model.Interfaces;
+using XmlExport.Model.Infrastructure;
 
 namespace XmlExport.Model.ToXml
 {

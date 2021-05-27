@@ -4,7 +4,7 @@
 library
 C#
 .cs
-D:\YandexDisk\YandexDisk\Documents\06_ASE\002_Programs&Plugins\Revit\Export room to xml\XmlExport\XmlExport\obj\Debug\
+D:\YandexDisk\YandexDisk\Documents\06_ASE\002_Programs&Plugins\Revit\Export room to xml\XmlExport\ExportGeometryToXml\XmlExport\obj\Debug\
 XmlExport
 none
 false
@@ -12,9 +12,9 @@ DEBUG;TRACE
 
 2-713663966
 
-391138896458
-29-1396939189
+39398260926
+29-724252612
 View\MainWindow.xaml;View\UserControl1.xaml;
 
-False
+True
 

@@ -7,7 +7,7 @@ using Autodesk.Revit.DB.IFC;
 using Autodesk.Revit.UI;
 using XmlExport.Model.Abstraction;
 using XmlExport.Model.Dto;
-using XmlExport.Model.Interfaces;
+using XmlExport.Model.Infrastructure;
 
 namespace XmlExport.Model.FromRevit
 {

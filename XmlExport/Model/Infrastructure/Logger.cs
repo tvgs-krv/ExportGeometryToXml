@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using Autodesk.Revit.DB;
 
-namespace XmlExport.Model.Interfaces
+namespace XmlExport.Model.Infrastructure
 {
     public class Logger : ILogger
     {
