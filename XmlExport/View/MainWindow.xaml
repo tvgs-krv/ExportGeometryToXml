@@ -1,0 +1,244 @@
+﻿<Window x:Class="XmlExport.View.MainWindow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:XmlExport.View"
+             xmlns:viewModel="clr-namespace:XmlExport.ViewModel"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
+             mc:Ignorable="d" 
+             Height="400" Width="400" WindowStartupLocation="CenterScreen">
+	<Window.DataContext>
+		<viewModel:MainWindowViewModel/>
+	</Window.DataContext>
+	<Window.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
+				<ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.Indigo.xaml" />
+				<ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml" />
+				<materialDesign:BundledTheme BaseTheme="Light" PrimaryColor="Indigo" SecondaryColor="Lime" />
+				<ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+				<ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Button.xaml" />
+				<ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.DialogHost.xaml" />
+
+			</ResourceDictionary.MergedDictionaries>
+		</ResourceDictionary>
+	</Window.Resources>
+	<Grid>
+
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="10"/>
+			<!--<ColumnDefinition MaxWidth="250" MinWidth="215"/>-->
+			<ColumnDefinition/>
+			<ColumnDefinition Width="10"/>
+		</Grid.ColumnDefinitions>
+
+		<Grid.RowDefinitions>
+			<RowDefinition Height="10"/>
+			<RowDefinition/>
+			<RowDefinition Height="50"/>
+			<RowDefinition Height="10"/>
+		</Grid.RowDefinitions>
+
+
+		<StackPanel  Grid.Row="1" Grid.Column="1" Grid.RowSpan="3">
+
+
+		<Grid>
+					<Grid.RowDefinitions>
+						<RowDefinition Height="40" />
+						<RowDefinition/>
+					</Grid.RowDefinitions>
+					<StackPanel Grid.Row="0" Orientation="Horizontal" Margin="5">
+						<materialDesign:PackIcon Kind="AxisArrow"
+                                             Height="20"
+                                             Width="20"
+                                             VerticalAlignment="Center" />
+						<TextBlock
+                        Margin="8,0,0,0"
+                        VerticalAlignment="Center"
+                        Text="Координаты здания для экспорта:" />
+
+					</StackPanel >
+					<StackPanel Grid.Row="1" Margin="5">
+						<TextBox
+                            materialDesign:HintAssist.Hint="X:"
+                            Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                            Text="{Binding DeltaX}"
+                            VerticalAlignment="Center" Margin="5" TextChanged="textBox_TextChanged" 
+                            />
+						<TextBox
+                            materialDesign:HintAssist.Hint="Y:"
+                            Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                            Text="{Binding DeltaY}"
+                            VerticalAlignment="Center" Margin="5"
+                            TextChanged="textBox_TextChanged"/>
+						<TextBox
+                            materialDesign:HintAssist.Hint="Z:"
+                            Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                            Text="{Binding DeltaZ}"
+                            VerticalAlignment="Center" Margin="5"
+                            TextChanged="textBox_TextChanged"/>
+
+						<TextBox
+	                        materialDesign:HintAssist.Hint="Угол поворота:"
+	                        Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+	                        Text="{Binding Angle}"
+	                        VerticalAlignment="Center" Margin="5"
+	                        TextChanged="textBox_TextChanged"/>
+
+
+					</StackPanel>
+
+				</Grid>
+
+
+
+			<!--<materialDesign:Card Margin="5">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40" />
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="5">
+                        <materialDesign:PackIcon Kind="OrderCheckboxDescending"
+                                                 Height="20"
+                                                 Width="20"
+                                                 VerticalAlignment="Center" />
+                        <TextBlock
+                        Margin="8,0,0,0"
+                        VerticalAlignment="Center"
+                        Text="Варианты экспорта" />
+
+                    </StackPanel >
+                    <StackPanel Grid.Row="1" Margin="5" IsEnabled="False">
+                        <RadioButton GroupName="FullLevel"  IsChecked="{Binding IsByBuilding}" Content="Экспорт по зданию"/>
+                        <RadioButton GroupName="FullLevel" IsChecked="{Binding  IsByLevel}" Content="Экспорт по уровням"/>
+                        <CheckBox Content="Экспорт отчета"/>
+
+                    </StackPanel>
+
+                </Grid>
+            </materialDesign:Card>-->
+
+
+			<!--<materialDesign:Card Margin="5" IsEnabled="False">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40" />
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="5">
+                        <materialDesign:PackIcon Kind="FormatListChecks"
+                                                 Height="20"
+                                                 Width="20"
+                                                 VerticalAlignment="Center" />
+                        <TextBlock
+                            Margin="8,0,0,0"
+                            VerticalAlignment="Center"
+                            Text="Категории экспорта" />
+
+                    </StackPanel >
+                    <StackPanel Grid.Row="1" Margin="5">
+                        <CheckBox Content="Экспорт помещений" IsChecked="{Binding IsExportRooms}"/>
+                        <CheckBox Content="Экспорт стен" IsChecked="{Binding IsExportWalls}"/>
+                        <CheckBox Content="Экспорт проёмов" IsChecked="{Binding IsExportOpenings}"/>
+                        <CheckBox Content="Экспорт потолков" IsChecked="{Binding IsExportCeilings}"/>
+                        <CheckBox Content="Экспорт перекрытий" IsChecked="{Binding IsExportFloors}"/>
+                    </StackPanel>
+
+                </Grid>
+            </materialDesign:Card>-->
+
+		</StackPanel>
+
+
+		<StackPanel Grid.Column="2" Grid.Row="1">
+			<!--<materialDesign:Card Margin="5">
+				<Grid>
+					<Grid.RowDefinitions>
+						<RowDefinition Height="40" />
+						<RowDefinition/>
+					</Grid.RowDefinitions>
+					<StackPanel Grid.Row="0" Orientation="Horizontal" Margin="5">
+						<materialDesign:PackIcon Kind="AxisArrow"
+				                                 Height="20"
+				                                 Width="20"
+				                                 VerticalAlignment="Center" />
+						<TextBlock
+					        Margin="8,0,0,0"
+					        VerticalAlignment="Center"
+					        Text="Проверить модель:" />
+
+						<Button VerticalAlignment="Center" HorizontalAlignment="Center" Margin="30 0 0 0"
+				                Width="25" Height="25"
+				                Style="{StaticResource MaterialDesignIconButton}"
+				                ToolTip="Проверка модели">
+							<materialDesign:PackIcon Kind="VerifiedUser" />
+						</Button>
+					</StackPanel >
+					<StackPanel Grid.Row="1" Margin="5">
+						<RichTextBox Height="200"></RichTextBox>
+
+					</StackPanel>
+
+
+				</Grid>
+			</materialDesign:Card>-->
+
+			<!--<StackPanel>
+				<StackPanel Orientation="Horizontal" Margin="5">
+					<materialDesign:PackIcon Kind="VerifiedUser"
+					                         Height="20"
+					                         Width="20"
+					                         VerticalAlignment="Center" />
+					<TextBlock
+						Margin="8,0,0,0"
+						VerticalAlignment="Center"
+						Text="Проверить модель:" />
+
+					<Button VerticalAlignment="Center" HorizontalAlignment="Center" Margin="30 0 0 0"
+					        Width="25" Height="25"
+					        Style="{StaticResource MaterialDesignIconButton}"
+					        ToolTip="Обновить">
+						<materialDesign:PackIcon
+							Kind="CircleArrows" />
+					</Button>
+				</StackPanel >
+				<TextBox
+					Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}"
+					Margin="5,0,0,0"
+					VerticalAlignment="Top"
+					Height="200"
+					AcceptsReturn="True"
+					TextWrapping="Wrap"
+					VerticalScrollBarVisibility="Auto"
+					materialDesign:HintAssist.Hint="Результат проверки:"
+					IsEnabled="True"
+					Text="фыв"/>
+			</StackPanel>-->
+
+		</StackPanel>
+
+
+		<StackPanel Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" 
+		            Orientation="Horizontal" Margin="5" FlowDirection="RightToLeft">
+			<Button Click="ButtonBase_OnClick" 
+                    Style="{StaticResource MaterialDesignFlatButton}"
+                    Width="150" Margin="10 0 10 0">
+				ОТМЕНА
+			</Button>
+			<Button Command="{Binding ExportCommand}" Click="ButtonBase_OnClick"
+                    Style="{StaticResource MaterialDesignOutlinedButton}"
+                    Width="150" Margin="10 0 10 0">
+				ЭКСПОРТ
+			</Button>
+
+		</StackPanel>
+
+	</Grid>
+
+
+</Window>
